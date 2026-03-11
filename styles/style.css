@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --background: #111317;
+    --background-divisoes:#21242c;
+    --background-menu-lateral:#191a1c;
+    --background-selecionado:#34476e;
+
+    --fonte-primaria: #ffffff;
+    --fonte-secundaria: #697082;
+
+    --arredondamento: 10px;
+    --borda: 1px solid #2d2e31;
+
+    --azul: #4460ff;
+    --verde:#5fc266;
+    --vermelho:#d94e4e;
+    --amarelo:#efc83b;
+    --roxo:#af76d5;
+
+    --azul-escuro: #1f2f47;
+    --verde-escuro:#2d512f;
+    --vermelho-escuro:#562c2c;
+    --amarelo-escuro:#4e4421;
+    --roxo-escuro:#3f2a4c;
+}
+
+/* RESET */
+
+* {
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* BODY */
+
+body {
+    background-color: var(--background);
+    color: var(--fonte-primaria);
+    min-height: 100vh;
+    display: flex;
+    margin: 10px;
+}
+
+/* MAIN */
+
+main {
+    flex:1;
+    width: 80%;
+}
+
+/* PADRÕES */
+
+.icon {
+    width: 20px;
+    filter: brightness(0) invert(1);
+}
+
+/* TEXTOS */
+
+.titulo-grande {
+    color: var(--fonte-primaria);
+    font-size: xx-large;
+    font-weight: 700;
+}
+
+.titulo-medio {
+    color: var(--fonte-primaria);
+    font-size: x-large;
+    font-weight: 600
+}
+.titulo-pequena {
+    color: var(--fonte-primaria);
+    font-size: medium;
+    font-weight: 600
+}
+
+.subtitulo-pequeno {
+    color: var(--fonte-secundaria);
+    font-size: small;
+}
+
+.subtitulo-medio {
+    color: var(--fonte-secundaria);
+    font-size: medium;
+}
+
+/* ASIDE */
+
+aside {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-menu-lateral);
+    height: 100vh;
+    width: 20%;
+    border-radius: var(--arredondamento);
+    gap: 20px;
+    align-items: center;
+    padding: 5px    ;
+}
+
+/* LOGO EMPRESA */
+
+.logo-empresa {
+    width: 200px;
+}
+
+/* CONTA ASIDE */
+
+.conta-aside {
+    display: flex;
+    height: 100px;
+    width: 80%;
+    border-bottom: var(--borda);
+    border-top: var(--borda);
+    align-items: center;
+}
+
+.imagem-conta {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
+
+/* MENU */
+
+.navegacao-aside {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap:10px;
+}
+
+/* LINKS */
+
+.navegacao-aside a {
+    display: flex;
+    align-items: center;
+    gap:10px;
+    color: var(--fonte-primaria);
+    padding: 10px;
+    border-radius: var(--arredondamento);
+
+    transition: 
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease;
+}
+
+/* HOVER LINKS */
+
+.navegacao-aside a:hover{
+    background-color: var(--azul-escuro);
+    color: var(--azul);
+    transform: translateX(5px);
+}
+
+.navegacao-aside a:hover img {
+    filter: brightness(0) saturate(100%) invert(34%) sepia(98%) saturate(2653%) hue-rotate(218deg) brightness(102%) contrast(101%);
+}
+
+/* LINK ATIVO */
+.link-ativo {
+    background-color: var(--azul-escuro);
+    color: var(--azul);
+    transform: translateX(5px);
+}
