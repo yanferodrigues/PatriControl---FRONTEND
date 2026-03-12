@@ -2,7 +2,7 @@ const graficoDB = document.getElementById("grafico-dashboard")
 
 
 new Chart(graficoDB, {
-    type: 'doughnut',
+    type: 'pie',
     data: {
         datasets: [{
             label: 'Quantidade',
@@ -15,7 +15,7 @@ new Chart(graficoDB, {
     options: {
         cutout: '60%',
         animation: {
-            duration: 1500
+            duration: 2500
         }
     }
 });

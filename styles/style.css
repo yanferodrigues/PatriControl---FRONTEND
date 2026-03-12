@@ -277,7 +277,7 @@ main {
 .main-principal-card-esquerda {
     flex: 1;
     min-width: 250px;
-    height: 500px;
+    height: 600px;
     background-color: var(--background-divisoes);
     border: var(--borda-clara);
     border-radius: var(--arredondamento);
@@ -287,7 +287,7 @@ main {
 .main-principal-card-direita {
     flex: 2;
     min-width: 450px;
-    height: 500px;
+    height: 600px;
     background-color: var(--background-divisoes);
     border: var(--borda-clara);
     border-radius: var(--arredondamento);
