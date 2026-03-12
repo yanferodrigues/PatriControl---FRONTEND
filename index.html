@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PatriControl</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="assets/icones/patrimonio_branco.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <aside>
-        <img class="logo-empresa" src="assets/logos empresas/LOGO FRANCIOSI SEMENTES.png" alt="">
+        <img class="logo-empresa" src="assets/logos empresas/LOGO SOCIEDADE FRANCIOSI.png" alt="">
         <div class="conta-aside">  
             <div class="conta-aside-conteudo">
                 <img class="imagem-conta" src="assets/auxiliar/foto yan corporativa.jpeg" alt="">
@@ -34,8 +36,76 @@
         </nav>
     </aside>
     <main>
-        
+        <div class="main-topo">
+            <div>
+                <p class="titulo-grande">Dashboard</p>
+                <p class="subtitulo-medio">Visão geral do controle patrimonial</p>
+            </div>
+            <button class="botao-azul">
+                <img src="assets/icones/adicionar_branco.png" alt="Novo patrimônio">
+                Novo patrimonio
+            </button>
+        </div>
+        <div class="main-meio">
+            <a class="main-meio-card">
+                <div class="main-meio-card-informacoes">
+                    <p class="subtitulo-medio">Total de Patrimônios</p>
+                    <p class="titulo-grande">1530</p>
+                    <p class="subtitulo-pequeno">Cadastrados</p>
+                </div>
+                <div>
+                    <div class="icone-cards azul">
+                        <img src="assets/icones/patrimonio_branco.png" alt="quantidade patrimonio">
+                    </div>
+                </div>
+            </a>
+            <a class="main-meio-card">
+                <div class="main-meio-card-informacoes">
+                    <p class="subtitulo-medio">Total em valor de ativos</p>
+                    <p class="titulo-pequeno">R$ 200.000.000,00</p>
+                    <p class="subtitulo-pequeno">Com notas lançadas</p>
+                </div>
+                <div>
+                    <div class="icone-cards roxo">
+                        <img src="assets/icones/dinheiro_branco.png" alt="quantidade patrimonio">
+                    </div>
+                </div>
+            </a>
+            <a class="main-meio-card">
+                <div class="main-meio-card-informacoes">
+                    <p class="subtitulo-medio">Total de imóveis</p>
+                    <p class="titulo-grande">50</p>
+                    <p class="subtitulo-pequeno">Cadastrados</p>
+                </div>
+                <div>
+                    <div class="icone-cards verde">
+                        <img src="assets/icones/imovel_branco.png" alt="quantidade patrimonio">
+                    </div>
+                </div>
+            </a>
+            <a class="main-meio-card">
+                <div class="main-meio-card-informacoes">
+                    <p class="subtitulo-medio">Total em valor</p>
+                    <p class="titulo-pequeno">R$ 100.000.000,00</p>
+                    <p class="subtitulo-pequeno">Investimentos finalizados</p>
+                </div>
+                <div>
+                    <div class="icone-cards amarelo">
+                        <img src="assets/icones/dinheiro_branco.png" alt="quantidade patrimonio">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="main-principal">
+            <div class="main-principal-card-esquerda">
+                <canvas id="grafico-dashboard"></canvas>
+            </div>
+            <div class="main-principal-card-direita">
+                
+            </div>
+        </div>
     </main>
+    <script src="assets/js/dashboard.js"></script>
 </body>
 
 

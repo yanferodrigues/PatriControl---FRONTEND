@@ -3,26 +3,41 @@
 :root {
     --background: #111317;
     --background-divisoes:#21242c;
-    --background-menu-lateral:#191a1c;
+    --background-menu-lateral:#15181f;
     --background-selecionado:#34476e;
 
     --fonte-primaria: #ffffff;
     --fonte-secundaria: #697082;
 
     --arredondamento: 10px;
-    --borda: 1px solid #2d2e31;
+    --borda-escura: 1px solid #2a2c31;
+    --borda-clara: 1px solid #3a3d43;
 
-    --azul: #4460ff;
+    --azul: #3569d9;
     --verde:#5fc266;
     --vermelho:#d94e4e;
     --amarelo:#efc83b;
     --roxo:#af76d5;
+
+    --imagem-azul: brightness(0) saturate(100%) invert(38%) sepia(88%) saturate(1717%) hue-rotate(206deg) brightness(93%) contrast(92%);
+    --imagem-verde: brightness(0) saturate(100%) invert(69%) sepia(19%) saturate(1007%) hue-rotate(75deg) brightness(90%) contrast(90%);
+    --imagem-vermelho: brightness(0) saturate(100%) invert(40%) sepia(54%) saturate(1143%) hue-rotate(319deg) brightness(91%) contrast(93%);
+    --imagem-amarelo: brightness(0) saturate(100%) invert(80%) sepia(32%) saturate(720%) hue-rotate(5deg) brightness(95%) contrast(92%);
+    --imagem-roxo: brightness(0) saturate(100%) invert(59%) sepia(30%) saturate(668%) hue-rotate(235deg) brightness(94%) contrast(92%);
+
+    --azul-medio: rgb(44, 90, 165);
+    --verde-medio:#56ac5c;
+    --vermelho-medio:#a43e3e;
+    --amarelo-medio:#c5a534;
+    --roxo-mdeio:#865aa4;
 
     --azul-escuro: #1f2f47;
     --verde-escuro:#2d512f;
     --vermelho-escuro:#562c2c;
     --amarelo-escuro:#4e4421;
     --roxo-escuro:#3f2a4c;
+
+    --sombra: 0px 0px 30px #000000;
 }
 
 /* RESET */
@@ -42,13 +57,7 @@ body {
     min-height: 100vh;
     display: flex;
     margin: 10px;
-}
-
-/* MAIN */
-
-main {
-    flex:1;
-    width: 80%;
+    gap: 10px;
 }
 
 /* PADRÕES */
@@ -58,22 +67,43 @@ main {
     filter: brightness(0) invert(1);
 }
 
+.botao-azul {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    height: 35px;
+    border-radius: var(--arredondamento);
+    color: var(--fonte-primaria);
+    background-color: var(--azul);
+    border: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.botao-azul:hover {
+    transform:scale(0.98);
+    background-color: var(--azul-medio);
+}
+
+.botao-azul img {
+    height: 80%;
+}
+
 /* TEXTOS */
 
 .titulo-grande {
-    color: var(--fonte-primaria);
     font-size: xx-large;
     font-weight: 700;
 }
 
 .titulo-medio {
-    color: var(--fonte-primaria);
     font-size: x-large;
     font-weight: 600
 }
+
 .titulo-pequeno {
-    color: var(--fonte-primaria);
-    font-size: medium;
+    font-size: LARGE;
     font-weight: 600
 }
 
@@ -93,29 +123,29 @@ aside {
     display: flex;
     flex-direction: column;
     background-color: var(--background-menu-lateral);
-    height: 100vh;
-    width: 20%;
+    min-height: 100vh;
+    width: 260px;
     border-radius: var(--arredondamento);
     gap: 20px;
     align-items: center;
-    padding: 5px    ;
+    padding: 10px;
 }
 
-/* LOGO EMPRESA */
+/* LOGO */
 
 .logo-empresa {
     width: 200px;
 }
 
-/* CONTA ASIDE */
+/* CONTA */
+
 .conta-aside {
     display: flex;
     height: 100px;
-    width: 80%;
-    border-bottom: var(--borda);
-    border-top: var(--borda);
+    width: 100%;
+    border-bottom: var(--borda-escura);
+    border-top: var(--borda-escura);
     align-items: center;
-    justify-content: start;
     gap: 10px;
 }
 
@@ -124,7 +154,6 @@ aside {
     height: 70%;
     width: 100%;
     align-items: center;
-    justify-content: start;
     gap: 10px;
     transition: transform 0.1s ease;
     cursor: pointer;
@@ -138,19 +167,17 @@ aside {
     border-radius: 50px;
 }
 
-/* HOVER CONTA ASIDE */
 .conta-aside-conteudo:hover {
     transform: scale(1.02);
     background-color: #18181a;
 }
-
 
 /* MENU */
 
 .navegacao-aside {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
     gap:10px;
 }
 
@@ -184,8 +211,148 @@ aside {
 }
 
 /* LINK ATIVO */
+
 .link-ativo {
     background-color: var(--azul-escuro);
     color: var(--azul);
     transform: translateX(5px);
+}
+
+/* MAIN */
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* TOPO */
+
+.main-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* MEIO */
+
+.main-meio {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* PRINCIPAL */
+
+.main-principal {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    padding: 10px;
+    align-items: start;
+}
+
+/* CARDS */
+
+.main-meio-card {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    min-width: 250px;
+    height: 220px;
+    background-color: var(--background-divisoes);
+    border: var(--borda-clara);
+    border-radius: var(--arredondamento);
+    padding: 25px;
+    transition: transform 0.2s ease;
+}
+
+.main-meio-card:hover {
+    transform: scale(1.03);
+    box-shadow: var(--sombra);
+    cursor: pointer;
+}
+
+.main-principal-card-esquerda {
+    flex: 1;
+    min-width: 250px;
+    height: 500px;
+    background-color: var(--background-divisoes);
+    border: var(--borda-clara);
+    border-radius: var(--arredondamento);
+    padding: 30px;
+}
+
+.main-principal-card-direita {
+    flex: 2;
+    min-width: 450px;
+    height: 500px;
+    background-color: var(--background-divisoes);
+    border: var(--borda-clara);
+    border-radius: var(--arredondamento);
+    padding: 15px;
+}
+
+/* INFORMAÇÕES CARDS */
+
+.main-meio-card-informacoes{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap:20px;
+}
+.main-meio-card-informacoes >*{
+    flex:1;
+    display: flex;
+    align-items: center;
+}
+
+/* ICONES CARDS */
+.icone-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--arredondamento);
+}
+.icone-cards img {
+    width: 20px;
+    height: 20px;
+}
+
+.icone-cards.azul {
+    background-color: var(--azul-escuro);
+}
+.icone-cards.azul img {
+    filter: var(--imagem-azul);
+}
+
+.icone-cards.amarelo {
+    background-color: var(--amarelo-escuro);
+}
+.icone-cards.amarelo img {
+    filter: var(--imagem-amarelo);
+}
+
+.icone-cards.verde {
+    background-color: var(--verde-escuro);
+}
+.icone-cards.verde img {
+    filter: var(--imagem-verde);
+}
+
+.icone-cards.vermelho {
+    background-color: var(--vermelho-escuro);
+}
+.icone-cards.vermelho img {
+    filter: var(--imagem-vermelho);
+}
+
+.icone-cards.roxo {
+    background-color: var(--roxo-escuro);
+}
+.icone-cards.roxo img {
+    filter: var(--imagem-roxo);
 }
