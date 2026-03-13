@@ -528,6 +528,11 @@ main {
     height: 450px;
     padding: 15px;
     background-color: var(--background-divisoes);
+    transition: transform 0.2s ease;
+}
+.main-principal-patrimonio-card:hover{
+    transform: scale(1.04);
+    cursor: pointer;
 }
 .main-principal-patrimonio-card-foto {
     border-radius: var(--arredondamento);
@@ -587,7 +592,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
+    width: 60px;
     border: 2px solid var(--vermelho-escuro);
     background-color: var(--vermelho);
     color: var(--fonte-primaria);
