@@ -19,6 +19,7 @@
     --amarelo:#efc83b;
     --roxo:#af76d5;
     --ciano: #8ef7d2;
+    --cinza: #3a3d43;
 
     --imagem-azul: brightness(0) saturate(100%) invert(38%) sepia(88%) saturate(1717%) hue-rotate(206deg) brightness(93%) contrast(92%);
     --imagem-verde: brightness(0) saturate(100%) invert(69%) sepia(19%) saturate(1007%) hue-rotate(75deg) brightness(90%) contrast(90%);
@@ -26,6 +27,7 @@
     --imagem-amarelo: brightness(0) saturate(100%) invert(80%) sepia(32%) saturate(720%) hue-rotate(5deg) brightness(95%) contrast(92%);
     --imagem-roxo: brightness(0) saturate(100%) invert(59%) sepia(30%) saturate(668%) hue-rotate(235deg) brightness(94%) contrast(92%);
     --imagem-ciano: invert(12%) sepia(33%) saturate(980%) hue-rotate(105deg) brightness(100%) contrast(95%);
+    --imagem-cinza: invert(19%) sepia(3%) saturate(1610%) hue-rotate(188deg) brightness(70%) contrast(92%);
 
     --azul-medio: rgb(44, 90, 165);
     --verde-medio:#56ac5c;
@@ -68,6 +70,11 @@ body {
 }
 
 /* PADRÕES */
+.label-inputs {
+    color: var(--fonte-primaria);
+    font-weight: 500;
+    font-size: large;
+}
 input,select {
     outline: none;
     font-size: medium;
@@ -300,9 +307,10 @@ main {
 }
 
 .main-meio-index-card:hover {
-    transform: scale(1.03);
+    transform: scale(1.01);
     box-shadow: var(--sombra);
     cursor: pointer;
+    border: 1px solid #31456c;
 }
 
 .main-principal-index-card-esquerda {
@@ -512,6 +520,7 @@ main {
     padding: 10px;
     color: var(--fonte-secundaria);
 }
+/* CARDS */
 
 .main-principal-patrimonio {
     display: flex;
@@ -522,6 +531,9 @@ main {
     gap: 20px;
 }
 .main-principal-patrimonio-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border-radius: var(--arredondamento);
     border: var(--borda-clara);
     width: 350px;
@@ -535,10 +547,11 @@ main {
     cursor: pointer;
 }
 .main-principal-patrimonio-card-foto {
-    border-radius: var(--arredondamento);
-    width:100%;
-    height:200px;
-    object-fit: cover;   
+    display: flex;
+    min-width: 100px;
+    width: auto;
+    max-height:200px;
+    object-fit: contain;   
 }
 .main-principal-patrimonio-card-descricao {
     padding: 10px;
@@ -597,4 +610,112 @@ main {
     background-color: var(--vermelho);
     color: var(--fonte-primaria);
     border-radius: var(--arredondamento);
+}
+/****************** NOVO PATRIMONIO *******************/
+
+/* CARDS */
+.novo-patrimonio-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    gap: 30px;
+    min-width: 800px;
+    min-height: 280px;
+    height: auto;
+    background-color: var(--background-divisoes);
+    border: var(--borda-clara);
+    border-radius: 30px;
+    padding: 25px;
+    transition: transform 0.2s ease;
+    margin: 20px 200px; 
+}
+#card-upload-foto{
+    display: flex;
+    justify-content: center;
+}
+
+/* INPUTS */
+.upload-box{
+    width:500px;
+    height:300px;
+    border:2px dashed var(--cinza);
+    border-radius:var(--arredondamento);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    background-color: var(--background-divisoes);
+    position:relative;
+    overflow:hidden;
+    padding: 15px;
+}
+
+.upload-box input{
+    display:none;
+}
+
+.conteudo-upload{
+    text-align:center;
+    filter: var(--imagem-cinza);
+}
+
+.preview-img{
+    border-radius: var(--arredondamento);
+    width:100%;
+    height:100%;
+    object-fit: contain;
+    display:none;
+}
+.box-inputs-grande {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 15px;
+    justify-content: center;
+}
+
+.box-inputs-grande div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+.input-grande {
+    background-color: #2d3037;
+    border-radius: var(--arredondamento);
+    height: 40px;
+    border: solid 1px var(--borda-clara);
+    color: var(--fonte-primaria);
+    padding-left: 20px;
+    font-size: medium;
+}
+.textarea-grande {
+    background-color: #2d3037;
+    width: 100%;
+    border-radius: var(--arredondamento);
+    height: 200px;
+    border: solid 1px var(--borda-clara);
+    color: var(--fonte-primaria);
+    padding: 20px;
+    font-size: medium;
+
+}
+
+/* KEYFRAMES */
+.aparecer-baixo {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: subirSuave 0.8s ease forwards;
+}
+
+@keyframes subirSuave {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

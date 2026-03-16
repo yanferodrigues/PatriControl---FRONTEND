@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PatriControl</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="assets/icones/patrimonio_branco.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <aside>
+        <img class="logo-empresa" src="assets/logos empresas/LOGO SOCIEDADE FRANCIOSI.png" alt="">
+        <div class="conta-aside">  
+            <div class="conta-aside-conteudo">
+                <img class="imagem-conta" src="assets/auxiliar/foto yan corporativa.jpeg" alt="">
+                <div>
+                    <p class="titulo-pequeno">Yan Felipe Rodrigues</p>
+                    <p class="subtitulo-pequeno">Assistente patrimonial</p>
+                </div>
+            </div>
+        </div>
+        <nav class="navegacao-aside">
+            <a href="index.html">
+                <img class="icon" src="assets/icones/dashboard_branco.png" alt="dashboard">
+                Dashboard
+            </a>
+            <a href="patrimonio.html">
+                <img class="icon" src="assets/icones/patrimonio_branco.png" alt="patrimonio">
+                Patrimônio
+            </a>
+            <a class="link-ativo" href="novo patrimonio.html">
+                <img class="icon" src="assets/icones/adicionar_branco.png" alt="novo patrimonio">
+                Novo Patrimônio
+            </a>
+        </nav>
+    </aside>
+    <main class="aparecer-baixo">
+        <label for=""></label>
+        <div id="card-upload-foto">
+            <label class="upload-box">
+                <input type="file" accept="image/*" id="inputFoto">
+
+                <img id="preview" class="preview-img">
+
+                <div class="conteudo-upload" id="textoUpload">
+                    <img src="assets/icones/adicionar imagem.png" alt="adicionar imagem">
+                    <p>Adicionar</p>
+                </div>
+            </label>
+        </div>
+    
+        <div class="novo-patrimonio-card">
+            <p class="titulo-medio">Informações Básicas</p>
+            <div class="box-inputs-grande">
+                <div>
+                    <label class="label-inputs" for="input-codigo-ativo">Código *</label>
+                    <input class="input-grande" name="input-codigo-ativo" id="input-codigo-ativo" type="text" placeholder="Ex: IS000001">
+                </div>
+                <div>
+                    <label class="label-inputs" for="input-descricao-ativo">Descrição (Tipo) *</label>
+                    <input class="input-grande" name="input-descricao-ativo" id="input-descricao-ativo" type="text" placeholder="Ex: Trator">
+                </div>
+            </div>
+            <div class="box-inputs-grande">
+                <div>
+                    <label class="label-inputs" for="input-chassi-ativo">Chassi/Nº de Série</label>
+                    <input class="input-grande" name="input-chassi-ativo" id="input-chassi-ativo" type="text" placeholder="Ex: IS000001">
+                </div>
+                <div>
+                    <label class="label-inputs" for="input-placa-ativo">Placa *</label>
+                    <input class="input-grande" name="input-placa-ativo" id="input-placa-ativo" type="text" placeholder="Ex: Trator">
+                </div>
+            </div>
+            <div class="box-inputs-grande">
+                <div>
+                    <label class="label-inputs" for="input-cor-ativo">Cor primária</label>
+                    <input class="input-grande" name="input-cor-ativo" id="input-cor-ativo" type="text" placeholder="Ex: Trator">
+                </div>
+                <div>
+                    <label class="label-inputs" for="select-categoria-ativo">Categoria *</label>
+                    <select class="input-grande" name="select-categoria-ativo" id="select-categoria-ativo">
+                        <option disabled hidden selected></option>
+                        <option value="MAQUINAS E IMPLEMENTOS">Maquinas e implementos</option>
+                        <option value="INFORMATICA E COMUNICACAO">Informática e comunicação</option>
+                        <option value="VEICULOS">Veículos</option>
+                        <option value="EQUIPAMENTOS DIVERSOS">Equipamentos diversos</option>
+                        <option value="IMOVEIS">Imóveis</option>
+                        <option value="MOVEIS E UTENSILIOS">Móveis e utensílios</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="label-inputs" for="select-status-ativo">Status *</label>
+                    <select class="input-grande" name="select-status-ativo" id="select-status-ativo">
+                        <option value="ATIVO" selected>Ativo</option>
+                        <option value="INATIVO" selected>Inativo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="box-inputs-grande">
+                <div>
+                    <label class="label-inputs" for="textarea-detalhamento-ativo">Detalhamento</label>
+                    <textarea class="textarea-grande" name="textarea-detalhamento-ativo" id="textarea-detalhamento-ativo" placeholder="Informações extras..."></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="novo-patrimonio-card">
+            
+        </div>
+        <div class="novo-patrimonio-card">
+            
+        </div>
+        <div class="novo-patrimonio-card">
+            
+        </div>
+    </main>
+    <script src="assets/js/novo patrimonio.js"></script>
+</body>
+
+
+</html>
