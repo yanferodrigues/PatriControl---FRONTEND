@@ -14,7 +14,7 @@
     --borda-clara: 1px solid #3a3d43;
 
     --azul: #3569d9;
-    --verde:#5fc266;
+    --verde:#56d897;
     --vermelho:#d94e4e;
     --amarelo:#efc83b;
     --roxo:#af76d5;
@@ -28,9 +28,10 @@
     --imagem-roxo: brightness(0) saturate(100%) invert(59%) sepia(30%) saturate(668%) hue-rotate(235deg) brightness(94%) contrast(92%);
     --imagem-ciano: invert(12%) sepia(33%) saturate(980%) hue-rotate(105deg) brightness(100%) contrast(95%);
     --imagem-cinza: invert(19%) sepia(3%) saturate(1610%) hue-rotate(188deg) brightness(70%) contrast(92%);
+    --imagem-branco: invert(0%) saturate(1610%) brightness(100%) contrast(100%);
 
     --azul-medio: rgb(44, 90, 165);
-    --verde-medio:#56ac5c;
+    --verde-medio:#56ac8d;
     --vermelho-medio:#a43e3e;
     --amarelo-medio:#c5a534;
     --roxo-medio:#865aa4;
@@ -38,7 +39,7 @@
 
 
     --azul-escuro: #1f2f47;
-    --verde-escuro:#2d512f;
+    --verde-escuro:#2d5147;
     --vermelho-escuro:#562c2c;
     --amarelo-escuro:#4e4421;
     --roxo-escuro:#5a3a70;
@@ -70,6 +71,9 @@ body {
 }
 
 /* PADRÕES */
+a {
+    color: var(--fonte-primaria);
+}
 .label-inputs {
     color: var(--fonte-primaria);
     font-weight: 500;
@@ -99,7 +103,49 @@ input,select {
     height: 50px;
     text-align: center;
 }
-
+.botao-excluir {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--vermelho);
+    background-color: transparent;
+    color: var(--vermelho);
+    height: 40px;
+    filter: var(--imagem-vermelho);
+    gap: 5px;
+    border-radius: var(--arredondamento);
+    transition: transform 0.2s ease ;
+}
+.botao-excluir:hover {
+    transform: scale(1.04);
+    cursor: pointer;
+}
+.botao-excluir img, .icone-informacoes {
+    height: 60%;
+}
+.icone-informacoes {
+    filter: var(--imagem-cinza);
+}
+.botao-editar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    height: 40px;
+    filter: var(--imagem-azul);
+    gap: 5px;
+    border-radius: var(--arredondamento);
+    transition: transform 0.2s ease ;
+}
+.botao-editar:hover {
+    transform: scale(1.04);
+    cursor: pointer;
+}
+.botao-editar img {
+    height: 60%;
+}
 .botao-azul {
     display: flex;
     align-items: center;
@@ -529,6 +575,7 @@ main {
     height: auto;
     width: 100%;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 }
 .main-principal-patrimonio-card {
@@ -597,25 +644,25 @@ main {
     justify-content: center;
     align-items: center;
     width: 50px;
-    border: 2px solid var(--verde-escuro);
-    background-color: var(--verde);
-    color: var(--fonte-primaria);
+    border: 1px solid var(--verde);
+    background-color: var(--verde-escuro);
     border-radius: var(--arredondamento);
+    font-weight: 300;
 }
 .patrimonio-inativo {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 60px;
-    border: 2px solid var(--vermelho-escuro);
-    background-color: var(--vermelho);
-    color: var(--fonte-primaria);
+    border: 1px solid var(--vermelho);
+    background-color: var(--vermelho-escuro);
     border-radius: var(--arredondamento);
+    font-weight: 300;
 }
 /****************** NOVO PATRIMONIO *******************/
 
 /* CARDS */
-.novo-patrimonio-card {
+.informacoes-patrimonio-card {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -629,7 +676,7 @@ main {
     border-radius: 30px;
     padding: 25px;
     transition: transform 0.2s ease;
-    margin: 20px 200px; 
+    margin: 20px 80px; 
 }
 #card-upload-foto{
     display: flex;
@@ -730,16 +777,30 @@ main {
     color: var(--fonte-primaria);
     padding-left: 20px;
     cursor: pointer;
+    padding: 10px;
     transition: transform 0.2s ease;
+    
+}
+.campo-upload-nota img{
+    filter: var(--imagem-cinza);
 }
 .campo-upload-nota:hover{
     transform: scale(1.03);
     border: dashed 2px #626777;
 }
 
-.input-nota {
+#input-nota {
     display: none;
 }
+
+/******************* DESCRIÇÃO DO PATRIMONIO *********************/
+.sep-detalhes {
+    display: flex;
+    padding: 10px;
+    border-bottom: var(--borda-escura);
+    width: 100%;
+}
+
 
 /* KEYFRAMES */
 .aparecer-baixo {
