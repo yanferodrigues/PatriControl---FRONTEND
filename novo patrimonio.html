@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
     <title>PatriControl</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="assets/icones/patrimonio_branco.png">
@@ -10,12 +10,15 @@
 </head>
 <body>
     <header>
-        <button>
+        <button id="botao-menu" onclick="abrirMenu(this)">
             <img src="assets/icones/menu-branco.png" alt="">
         </button>
     </header>
     <div style="display: flex;">
-        <aside>
+        <div class="overlay" onclick="abrirMenu(this)">
+            
+        </div>
+        <aside id="aside">
             <img class="logo-empresa" src="assets/logos empresas/LOGO SOCIEDADE FRANCIOSI.png" alt="">
             <div class="conta-aside">  
                 <div class="conta-aside-conteudo">
@@ -176,6 +179,7 @@
     </div>
     
     <script src="assets/js/novo patrimonio.js"></script>
+    <script src="assets/js/geral.js"></script>
 </body>
 
 

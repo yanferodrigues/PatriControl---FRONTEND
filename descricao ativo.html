@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
     <title>PatriControl</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="assets/icones/patrimonio_branco.png">
@@ -11,12 +11,15 @@
 
 <body>
     <header>
-        <button id="btn-menu">
+        <button id="botao-menu" onclick="abrirMenu(this)">
             <img src="assets/icones/menu-branco.png" alt="">
         </button>
     </header>
     <div style="display: flex;">
-        <aside>
+        <div class="overlay" onclick="abrirMenu(this)">
+            
+        </div>
+        <aside id="aside">
             <img class="logo-empresa" src="assets/logos empresas/LOGO SOCIEDADE FRANCIOSI.png" alt="">
             <div class="conta-aside">  
                 <div class="conta-aside-conteudo">
@@ -117,7 +120,7 @@
                 <div>
                     <div class="informacoes-patrimonio-card" style="min-height: 100px;">
                         <p class="titulo-pequeno">Valores</p>
-                        <div style="display: flex; justify-content:space-around; width:100%;">
+                        <div class="box-valores-ativo">
                             <div class="valores-ativo aquisicao">
                                 <p class="subtitulo-medio">Valor de aquisição</p>
                                 <p class="titulo-medio">R$4.500,00</p>
@@ -138,6 +141,7 @@
     </div>
     
     <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/geral.js"></script>
 </body>
 
 

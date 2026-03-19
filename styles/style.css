@@ -57,17 +57,7 @@
     box-sizing: border-box;
 }
 
-/* OVERLAY */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.1); 
-    backdrop-filter: blur(5px); 
-    z-index: 999;
-}
+
 
 /* BODY */
 
@@ -230,7 +220,7 @@ input,select {
 
 /* ASIDE */
 
-aside {
+#aside {
     display: flex;
     flex-direction: column;
     background-color: var(--background-menu-lateral);
@@ -240,6 +230,38 @@ aside {
     gap: 20px;
     align-items: center;
     padding: 10px;
+}
+#aside.ativo {
+    z-index: 1000;
+    transform: translate(0);
+    transition: transform 0.5s ease;
+}
+
+/* OVERLAY */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+
+    transition: backdrop-filter 0.5s ease, background 0.5s ease, opacity 0.3s ease;
+
+    z-index: 999;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.overlay.ativo {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* LOGO */
@@ -844,6 +866,11 @@ main {
     background-color: var(--azul-escuro);
     color: var(--azul);
 }
+.box-valores-ativo {
+    display: flex;
+    justify-content:space-around; 
+    width:100%;
+}
 
 
 /* KEYFRAMES */
@@ -872,15 +899,61 @@ main {
         width: 98%;
     }
 }
-@media screen and (max-width:1087px){
-    .main-principal-patrimonio-card {
-        width: 80%;
+@media screen and (max-width:1180px){
+    main {
+        margin-right: 20px;
     }
-    aside {
-        display: none;
+    .main-principal-patrimonio-card {
+        width: 300px;
+    }
+    .main-principal-index {
+        flex-direction: column;
+    }
+    .main-principal-index-card-esquerda{
+        width: 100%;
+    }
+    .main-principal-index-card-direita{
+        width: 100%;
+    }
+    #aside {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
         z-index: 1000;
+        box-shadow: var(--sombra);
     }
     header {
         display: flex;
+    }
+    .main-pesquisa-patrimonio{
+        flex-wrap: wrap;
+    }
+    .box-inputs {
+        flex-wrap: wrap;
+    }
+    .informacoes-patrimonio-card{
+        min-width: 400px;
+        margin: 20px;
+    }
+    .valores-ativo {
+        height: 75px;
+
+    }
+    .box-valores-ativo {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width:740px){
+    .main-principal-patrimonio-card {
+        width: 90%;
+    }
+    .upload-box{
+        width: 300px;
+        height: 200px;
     }
 }
