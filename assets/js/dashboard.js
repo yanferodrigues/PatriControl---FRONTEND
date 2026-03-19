@@ -26,11 +26,11 @@ new Chart(graficoDB, {
             ],
 
             backgroundColor: [
-                '#3569d9',
+                '#2f4cee',
                 '#5fc266',
-                '#d94e4e',
-                '#efc83b',
-                '#af76d5',
+                '#e12a2a',
+                '#fee924',
+                '#b342ff',
                 '#84f2cb'
             ],
 
