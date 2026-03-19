@@ -71,18 +71,30 @@
                     <img class="img-usuario" src="assets/auxiliar/foto yan corporativa.jpeg" alt="foto usuário">
                 </div>
 
-
-                <div style="display: flex; flex-direction: column; width: 60%; gap: 10px;">
-                    <label for="input-nome-usuario">Nome</label>
-                    <input type="text" id="input-nome-usuario" class="inputs-usuario">
-                </div>
-                <div style="display: flex; flex-direction: column; width: 60%; gap: 10px;">
+                <div style="display: flex; flex-direction: column; width: 60%; gap: 10px; min-width: 350px;">
                     <label for="input-email-usuario">Email</label>
-                    <input type="text" id="input-email-usuario" class="inputs-usuario">
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <input type="email" id="input-email-usuario" class="inputs-usuario" value="yan.vieira@sociedadefranciosi.com.br" readonly>
+                        <button class="btn-editar-usuario" style="border: transparent 1px solid; cursor:default;"></button>
+                    </div>
                 </div>
-                <div style="display: flex; flex-direction: column;width: 60%; gap: 10px;">
+                <div style="display: flex; flex-direction: column; width: 60%; gap: 10px; min-width: 350px;">
+                    <label for="input-nome-usuario">Nome</label>
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <input type="text" id="input-nome-usuario" class="inputs-usuario" value="Yan Felipe Rodrigues Vieira" readonly>
+                        <button class="btn-editar-usuario">
+                            <img src="assets/icones/editar_branco.png" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column;width: 60%; gap: 10px; min-width: 350px;">
                     <label for="input-senha-usuario">Senha</label>
-                    <input type="text" id="input-senha-usuario" class="inputs-usuario">
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <input type="password" id="input-senha-usuario" class="inputs-usuario" value="adsfasdfasdfasf" readonly>
+                        <button class="btn-editar-usuario">
+                            <img src="assets/icones/editar_branco.png" alt="">
+                        </button>
+                    </div>
                 </div>
                 <button id="btn-logout"> Logout </button>
             </div>

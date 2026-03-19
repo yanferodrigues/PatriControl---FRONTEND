@@ -224,7 +224,7 @@ input,select {
     display: flex;
     flex-direction: column;
     background-color: var(--background-menu-lateral);
-    min-height: 120vh;
+    min-height: 100vh;
     width: 260px;
     border-radius: var(--arredondamento);
     gap: 20px;
@@ -356,6 +356,8 @@ main {
     display: flex;
     flex-direction: column;
     flex: 1;
+    padding-left:10px ;
+    padding-right: 10px;
 }
 
 /**********************INDEX***********************/
@@ -898,9 +900,10 @@ main {
     background-color: #2d3037;
     border-radius: var(--arredondamento);
     height: 40px;
+    min-width: 300px;
     width: 100%;
     border: var(--borda-clara);
-    color: var(--fonte-primaria);
+    color: var(--fonte-secundaria);
     padding-left: 20px;
     font-size: medium; 
 }
@@ -918,6 +921,28 @@ main {
     transform: scale(1.04);
     background-color: rgb(90, 32, 32);
     cursor: pointer;
+}
+.btn-editar-usuario {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    border-radius: 100%;
+    min-height: 30px;
+    min-width: 30px;
+    width: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+.btn-editar-usuario:hover{
+    transform: scale(1.3);
+    
+}
+.btn-editar-usuario img{
+    width: 100%;
+    height: 100%;
 }
 
 
