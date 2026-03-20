@@ -6,4 +6,8 @@ function abrirMenu(btn) {
     aside.classList.toggle("ativo")
 }
 
+function alterarTema() {
+    document.body.classList.toggle("light-mode")
+}
+
 

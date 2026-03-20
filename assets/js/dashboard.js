@@ -1,6 +1,6 @@
-const graficoDB = document.getElementById("grafico-dashboard")
+const graficoDB = document.getElementById("grafico-dashboard");
 
-new Chart(graficoDB, {
+const chart = new Chart(graficoDB, {
     type: 'doughnut',
 
     data: {
@@ -15,15 +15,7 @@ new Chart(graficoDB, {
 
         datasets: [{
             label: 'Quantidade',
-            data: [200, 450, 600, 900, 500,60],
-
-            borderColor: [
-                '#1f2f47',
-                '#2d512f',
-                '#562c2c',
-                '#4e4421',
-                '#3f2a4c'
-            ],
+            data: [0, 0, 0, 0, 0, 0], // começa zerado
 
             backgroundColor: [
                 '#2f4cee',
@@ -34,6 +26,15 @@ new Chart(graficoDB, {
                 '#84f2cb'
             ],
 
+            borderColor: [
+                '#1f2f47',
+                '#2d512f',
+                '#562c2c',
+                '#4e4421',
+                '#3f2a4c',
+                '#1f2f47'
+            ],
+
             borderWidth: 2,
             hoverOffset: 8
         }]
@@ -42,24 +43,25 @@ new Chart(graficoDB, {
     options: {
         responsive: true,
         maintainAspectRatio: false,
+
         animation: {
-            animateRotate: true,
             duration: 2000,
-            easing: 'easeInOutQuart' 
+            easing: 'easeInOutQuart'
         },
+
         cutout: "65%",
 
         plugins: {
             legend: {
-                position: 'bottom',
-                align: 'start',
+                position: 'bottom', // 👈 embaixo
+                align: 'center',
 
                 labels: {
-                    usePointStyle: true,
+                    usePointStyle: true, // 👈 bolinha
                     pointStyle: 'circle',
                     boxWidth: 10,
                     padding: 15,
-                    color: "#ffffff"
+                    color: "#697082",
                 }
             }
         },
@@ -72,3 +74,9 @@ new Chart(graficoDB, {
         }
     }
 });
+
+// animação real
+setTimeout(() => {
+    chart.data.datasets[0].data = [200, 450, 600, 900, 500, 60];
+    chart.update();
+}, 200);

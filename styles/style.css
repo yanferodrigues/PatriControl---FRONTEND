@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
+    --foto-filter: brightness(100%) saturate(100%);
+
     --background: #111317;
     --background-divisoes:#1b1d24;
     --background-menu-lateral:#15181f;
@@ -47,6 +49,55 @@
 
     --sombra: 0px 0px 20px #141414;
 }
+.light-mode {
+    --foto-filter: brightness(0) saturate(100%);
+
+    --background: #f5f7fb;
+    --background-divisoes: #ffffff;
+    --background-menu-lateral: #e9ecf3;
+    --background-selecionado: #dbe6ff;
+
+    --fonte-primaria: #1a1c22;
+    --fonte-secundaria: #5c6475;
+
+    --arredondamento: 10px;
+    --borda-escura: 1px solid #d1d5db;
+    --borda-clara: 1px solid #e5e7eb;
+
+    --azul: #3569d9;
+    --verde: #2fbf71;
+    --vermelho: #e05252;
+    --amarelo: #d6a800;
+    --roxo: #9b6bd6;
+    --ciano: #2cc5a1;
+    --cinza: #6b7280;
+
+    /* filtros de imagem (mantidos, já funcionam bem em claro) */
+    --imagem-azul: brightness(0) saturate(100%) invert(38%) sepia(88%) saturate(1717%) hue-rotate(206deg) brightness(93%) contrast(92%);
+    --imagem-verde: brightness(0) saturate(100%) invert(69%) sepia(19%) saturate(1007%) hue-rotate(75deg) brightness(90%) contrast(90%);
+    --imagem-vermelho: brightness(0) saturate(100%) invert(40%) sepia(54%) saturate(1143%) hue-rotate(319deg) brightness(91%) contrast(93%);
+    --imagem-amarelo: brightness(0) saturate(100%) invert(80%) sepia(32%) saturate(720%) hue-rotate(5deg) brightness(95%) contrast(92%);
+    --imagem-roxo: brightness(0) saturate(100%) invert(59%) sepia(30%) saturate(668%) hue-rotate(235deg) brightness(94%) contrast(92%);
+    --imagem-ciano: invert(12%) sepia(33%) saturate(980%) hue-rotate(105deg) brightness(100%) contrast(95%);
+    --imagem-cinza: invert(40%) sepia(5%) saturate(500%) hue-rotate(180deg) brightness(90%) contrast(90%);
+    --imagem-branco: invert(0%) saturate(1610%) brightness(0%) contrast(100%);
+
+    --azul-medio: #5b84e6;
+    --verde-medio: #5fd6a0;
+    --vermelho-medio: #f06b6b;
+    --amarelo-medio: #e3c34d;
+    --roxo-medio: #b08ae0;
+    --ciano-medio: #5fd6bd;
+
+    --azul-escuro: #c7d7ff;
+    --verde-escuro: #c9f2df;
+    --vermelho-escuro: #f5c2c2;
+    --amarelo-escuro: #f3e7b3;
+    --roxo-escuro: #e3d1f5;
+    --ciano-escuro: #c7f3e7;
+
+    --sombra: 0px 0px 15px rgba(0, 0, 0, 0.08);
+}
 
 /* RESET */
 
@@ -71,6 +122,7 @@ body {
     gap: 10px;
 }
 
+
 /* HEADER */
 header {
     height: 50px;
@@ -88,6 +140,34 @@ header button :hover{
 }
 
 /* PADRÕES */
+.botao-alterar-tema {
+    height: 40px;
+    width: 50px;
+    background-color: transparent;
+    border: 0;
+    transition: transform 0.2s ease;
+}
+.botao-alterar-tema:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.botao-alterar-tema img{
+    height: 100%;
+    width: 100%;
+    filter: var(--foto-filter);
+}
+.sem-foto {
+    display: flex;
+    font-size: xx-large;
+    background-color: var(--cinza);
+    color: var(--fonte-secundaria);
+    font-weight: 1000;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--arredondamento);
+}
 a {
     color: var(--fonte-primaria);
 }
@@ -170,7 +250,7 @@ input,select {
     padding: 5px 10px;
     height: 35px;
     border-radius: var(--arredondamento);
-    color: var(--fonte-primaria);
+    color: white;
     background-color: var(--azul);
     border: 0;
     cursor: pointer;
@@ -268,6 +348,7 @@ input,select {
 
 .logo-empresa {
     width: 200px;
+    filter: var(--foto-filter);
 }
 
 /* CONTA */
@@ -294,6 +375,7 @@ input,select {
     padding: 5px;
 }
 
+
 .imagem-conta {
     height: 50px;
     width: 50px;
@@ -311,6 +393,9 @@ input,select {
     flex-direction: column;
     width: 100%;
     gap:10px;
+}
+.navegacao-aside img {
+    filter: var(--foto-filter);
 }
 
 /* LINKS */
@@ -550,6 +635,8 @@ main {
 /* GRAFICO */
 #grafico {
     height: 100%;
+    min-height: 250px; 
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -960,7 +1047,7 @@ main {
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0px);
     }
 }
 
